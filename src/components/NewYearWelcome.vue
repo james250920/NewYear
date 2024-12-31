@@ -5,7 +5,7 @@ import MotivationalMessages from './MotivationalMessages.vue';
 import SecretWordInput from './SecretWordInput.vue';
 
 const showSpecialContent = ref(false);
-
+launchFireworks();
 const handleAccessGranted = () => {
   showSpecialContent.value = true;
   launchFireworks();

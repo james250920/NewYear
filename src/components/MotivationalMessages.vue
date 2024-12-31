@@ -25,7 +25,7 @@ const messages = [
 
 <template>
   <div class="messages-container">
-    <h2 class="title">Mensajes Especiales para Ti</h2>
+    <h2 class="title">¡Feliz Año Nuevo! Que este año esté lleno de éxitos y nuevas aventuras. Y te deseo:</h2>
     <div class="messages">
       <div v-for="(message, index) in messages" 
            :key="index" 

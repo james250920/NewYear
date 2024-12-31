@@ -63,7 +63,7 @@ function sparkleEffect(origin: { x: number, y: number }) {
 }
 
 export function launchFireworks() {
-  const duration = 15 * 1000;
+  const duration = 55 * 1000;
   const animationEnd = Date.now() + duration;
 
   const interval = setInterval(() => {

@@ -5,7 +5,7 @@ const emit = defineEmits(['access-granted']);
 const secretWord = ref('');
 const error = ref(false);
 const CORRECT_WORD = 'camila';
-const CORRECT_WORD2 = 'gaby';
+const CORRECT_WORD2 = 'pollito con papas';
 const CORRECT_WORD3 = '2025';
 
 
@@ -17,6 +17,7 @@ const checkWord = () => {
     error.value = true;
     setTimeout(() => {
       error.value = false;
+      alert('Palabra incorrecta, En que año estamos?');
     }, 2000);
   }
 };

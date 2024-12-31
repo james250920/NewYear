@@ -1,17 +1,42 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import NewYearCountdown  from './NewYearCountdown.vue';
 
+// Emitimos el evento para cambiar el estado de Año Nuevo
 const emit = defineEmits(['setNewYear']);
+
+// Variable para mostrar el mensaje flotante
 const showMessage = ref(false);
 
+// Función para alternar la visibilidad del mensaje flotante
 const toggleMessage = () => {
   showMessage.value = true;
 };
 
+// Función para manejar la transición al nuevo año o cerrar el mensaje
 const transitionToNewYear = () => {
-  showMessage.value = false;
-  emit('setNewYear');
+  showMessage.value = false; // Oculta el mensaje flotante
+  emit('setNewYear'); // Opcional: ejecuta la acción principal si es necesario
 };
+
+//cerrar el mensaje
+const closeMessage = () => {
+  showMessage.value = false;
+}
+
+//capturar los valores de la cuenta regresiva
+const props = defineProps({
+  days: Number,
+  hours: Number,
+  minutes: Number,
+  seconds: Number
+  
+})
+
+
+// Computed para determinar la visibilidad de los botones
+const showControls = computed(() => props.seconds === 0 || props.minutes === 0 || props.hours === 0 || props.days === 0);
+const showControls2 = computed(() => props.seconds !== 0);
 </script>
 
 <template>
@@ -22,10 +47,21 @@ const transitionToNewYear = () => {
     <div v-if="showMessage" class="floating-message">
       <div class="message-content">
         <p>Lo que te tengo que decir 🙃</p>
-        <p>te lo dire a las 0:0:0:0 😉</p>
-        <button @click="transitionToNewYear" class="preview-button">
-          Ver mensaje especial
-        </button>
+        <p>Te lo diré a las 0:0:0:0 😉</p>
+
+        <!-- Botón "Ver mensaje especial" -->
+        <div v-if="showControls" id="controls">   
+          <button @click="transitionToNewYear" class="preview-button">
+            Ver mensaje especial
+          </button>
+        </div>
+
+        <!-- Botón "Regresar" -->
+        <div v-if="showControls2" id="controls2">   
+          <button @click="closeMessage" class="preview-button">
+            Regresar
+          </button>
+        </div>
       </div>
     </div>
   </div>

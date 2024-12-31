@@ -51,7 +51,7 @@ onUnmounted(() => {
 <template>
   <div>
     <div v-if="!isNewYear" class="countdown">
-      <h1>Cuenta regresiva para Año Nuevo</h1>
+      <h1>¡El reloj avanza, y con él llega un año lleno de nuevas oportunidades!</h1>
       <div class="timer">
         <div class="time-block">
           <span class="number">{{ days }}</span>
