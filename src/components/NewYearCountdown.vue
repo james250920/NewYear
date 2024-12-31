@@ -2,7 +2,6 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import MessageButton from './MessageButton.vue';
 import NewYearWelcome from './NewYearWelcome.vue';
-import TestControls from './TestControls.vue';
 
 const days = ref(0);
 const hours = ref(0);
