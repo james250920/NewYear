@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import NewYearCountdown  from './NewYearCountdown.vue';
 
 // Emitimos el evento para cambiar el estado de Año Nuevo
 const emit = defineEmits(['setNewYear']);
