@@ -7,7 +7,7 @@ const days = ref(0);
 const hours = ref(0);
 const minutes = ref(0);
 const seconds = ref(0);
-const isNewYear = ref(false);
+const isNewYear = ref(true);
 
 const calculateTimeLeft = () => {
   const now = new Date();
